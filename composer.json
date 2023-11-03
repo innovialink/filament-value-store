@@ -1,0 +1,79 @@
+{
+    "name": "mstfkhazaal/filament-value-store",
+    "description": "This is my package filament-value-store",
+    "keywords": [
+        "mstfkhazaal",
+        "laravel",
+        "filament-value-store"
+    ],
+    "homepage": "https://github.com/mstfkhazaal/filament-value-store",
+    "support": {
+        "issues": "https://github.com/mstfkhazaal/filament-value-store/issues",
+        "source": "https://github.com/mstfkhazaal/filament-value-store"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "mstfkhazaal",
+            "email": "mstfkhazaal@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "filament/filament": "^3.0",
+        "spatie/valuestore": "^1.3",
+        "spatie/laravel-package-tools": "^1.15.0",
+        "illuminate/contracts": "^10.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "nunomaduro/collision": "^7.9",
+        "nunomaduro/larastan": "^2.0.1",
+        "orchestra/testbench": "^8.0",
+        "pestphp/pest": "^2.0",
+        "pestphp/pest-plugin-arch": "^2.0",
+        "pestphp/pest-plugin-laravel": "^2.0",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "spatie/laravel-ray": "^1.26"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mstfkhazaal\\FilamentValueStore\\": "src/",
+            "Mstfkhazaal\\FilamentValueStore\\Database\\Factories\\": "database/factories/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mstfkhazaal\\FilamentValueStore\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mstfkhazaal\\FilamentValueStore\\FilamentValueStoreServiceProvider"
+            ],
+            "aliases": {
+                "FilamentValueStore": "Mstfkhazaal\\FilamentValueStore\\Facades\\FilamentValueStore"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
